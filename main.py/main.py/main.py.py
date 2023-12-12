@@ -97,8 +97,8 @@ def astar(draw, grid, start, end):
     g_score = {node: float("inf") for row in grid for node in row}
     g_score[start] = 0
     f_score = {node: float("inf") for row in grid for node in row}
-    print("Start in astar:", start)
-    print("End in astar:", end)
+    print("Start in a*:", start)
+    print("End in a*:", end)
     f_score[start] = h(start.get_pos(), end.get_pos())
 
     open_set_hash = {start}
@@ -160,10 +160,11 @@ def draw_grid(win, rows, width):
     gap = width // rows
     for i in range(rows):
         pygame.draw.line(win, WHITE, (0, i * gap), (width, i * gap))
+       
         for j in range(rows):
             pygame.draw.line(win, WHITE, (j * gap, 0), (j * gap, width))
-
-# Vẽ tất cả
+      
+    # Vẽ tất cả
 def draw(win, grid, rows, width):
     win.fill(WHITE)
 
